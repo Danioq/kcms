@@ -6,5 +6,5 @@ RUN git clone https://github.com/Danioq/kcms .
 
 RUN go get -d -v ./...
 RUN go install -v ./...
-
-CMD ["app"]
+RUN RUN go build -o main .
+CMD ["main"]
