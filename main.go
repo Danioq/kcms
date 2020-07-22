@@ -26,6 +26,5 @@ func main() {
 	router.HandleFunc("/", Index)
 	router.HandleFunc("/{id}", HelloNumber)
 
-	go http.ListenAndServe(":8080", router)
-	go http.ListenAndServe(":443", router)
+	http.ListenAndServe(":8080", router)
 }
