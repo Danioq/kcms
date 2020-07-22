@@ -1,10 +1,8 @@
 FROM golang:1.14
 
-WORKDIR /go/src/app
-RUN git clone https://github.com/Danioq/kcms .
-# COPY . .
+RUN mkdir /kcms
+RUN git clone https://github.com/Danioq/kcms /kcms
+WORKDIR /kcms
 
-RUN go get -d -v ./...
-RUN go install -v ./...
-RUN RUN go build -o main .
-CMD ["main"]
+RUN go build -o main .
+CMD ["/kcms/main"]
